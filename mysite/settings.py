@@ -14,7 +14,7 @@ import os
 import sys
 
 import dj_database_url
-
+import django_heroku
 from dotenv import find_dotenv, load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -159,3 +159,6 @@ LOGGING = {
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
