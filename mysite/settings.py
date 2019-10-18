@@ -123,6 +123,37 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Explicitly use stdout for log output so logs appear in Azure
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(asctime)s [%(levelname)s] %(module)s: %(message)s',
+            'datefmt': '%m/%d/%Y %H:%M:%S',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'stream': 'ext://sys.stdout',
+            'formatter': 'console',
+        },
+    },
+    'loggers': {
+        'django': {
+            'propagate': False,
+            'level': 'INFO',
+            'handlers': ['console'],
+        },
+        'polls': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        },
+    },
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
