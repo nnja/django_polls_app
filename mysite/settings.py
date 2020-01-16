@@ -89,8 +89,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # DATABASE_URL environment variable, or use sql lite by default if
 # one is not set.
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, default="sqlite:////" + os.path.join(BASE_DIR, 'db.sqlite3'))
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
