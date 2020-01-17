@@ -101,6 +101,7 @@ celerybeat-schedule
 .env
 .venv
 env/
+env36/
 venv/
 ENV/
 env.bak/
@@ -129,3 +130,7 @@ staticfiles/
 
 # Ignore azure auto-created files and directories
 .azure/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
