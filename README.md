@@ -2,7 +2,7 @@
 
 ## About
 
-The Django sample polls application, from [Writing your first Django app](https://docs.djangoproject.com/en/2.2/intro/tutorial01/) for Django version 2.2.
+The Django sample polls application, from [Writing your first Django app](https://docs.djangoproject.com/en/3.0/intro/tutorial01/) for Django version 3.0.
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ Run migrations, and load initial data from fixtures.
 (env)$ python manage.py loaddata polls/fixtures/initial_data.json
 ```
 
-**Note: the admin username is admin, password is admin@example.com**
+**Note: In the example fixture data, the admin username is admin, password is adminpassword**
 
 ## Configuration
 
